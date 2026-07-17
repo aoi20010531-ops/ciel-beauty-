@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ciel Beauty | ご予約</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Noto Sans JP',sans-serif;
+    background:#F8F8F6;
+    color:#333;
+    line-height:1.8;
+
+}
+
+/* ---------------- Hero ---------------- */
+
+.hero{
+
+    height:90vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
+    url("hero.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+.hero h1{
+
+    font-size:64px;
+    letter-spacing:4px;
+    font-weight:700;
+
+}
+
+.hero p{
+
+    margin-top:20px;
+    font-size:22px;
+    letter-spacing:2px;
+
+}
+
+/* ---------------- Container ---------------- */
+
+.container{
+
+    max-width:1000px;
+    margin:auto;
+    padding:70px 25px;
+
+}
+
+section{
+
+    margin-bottom:60px;
+
+}
+
+h2{
+
+    font-size:32px;
+    margin-bottom:30px;
+    text-align:center;
+    position:relative;
+
+}
+
+h2:after{
+
+    content:"";
+    width:70px;
+    height:3px;
+    background:#8BAA92;
+    display:block;
+    margin:12px auto;
+
+}
+
+/* ---------------- Card ---------------- */
+
+.card{
+
+    background:white;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+/* ---------------- Hours ---------------- */
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+td{
+
+    padding:16px;
+    border-bottom:1px solid #eee;
+
+}
+
+td:last-child{
+
+    text-align:right;
+
+}
+
+/* ---------------- Menu ---------------- */
+
+.menu-grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+
+}
+
+.menu{
+
+    background:#FCFCFC;
+    border-radius:18px;
+    padding:35px;
+    text-align:center;
+    transition:.3s;
+    border:1px solid #eee;
+
+}
+
+.menu:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.menu h3{
+
+    margin-bottom:15px;
+    font-size:24px;
+
+}
+
+.menu p{
+
+    color:#777;
+
+}
+
+.price{
+
+    margin-top:20px;
+    font-size:30px;
+    color:#8BAA92;
+    font-weight:bold;
+
+}
+
+/* ---------------- Button ---------------- */
+
+.button{
+
+    display:block;
+
+    max-width:360px;
+
+    margin:60px auto;
+
+    text-align:center;
+
+    background:#8BAA92;
+
+    color:white;
+
+    padding:18px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-size:20px;
+
+    transition:.3s;
+
+}
+
+.button:hover{
+
+    background:#6F9077;
+
+}
+
+/* ---------------- Footer ---------------- */
+
+footer{
+
+    background:#F0F0ED;
+
+    text-align:center;
+
+    padding:35px;
+
+    color:#777;
+
+}
+
+/* ---------------- Responsive ---------------- */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+h2{
+
+font-size:28px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<div>
+
+<h1>Ciel Beauty</h1>
+
+<p>髪も心も整う場所。</p>
+
+</div>
+
+</section>
+
+<div class="container">
+
+<section>
+
+<h2>営業時間</h2>
+
+<div class="card">
+
+<table>
+
+<tr>
+<td>月曜日</td>
+<td>10:00〜19:00</td>
+</tr>
+
+<tr>
+<td>火曜日</td>
+<td>定休日</td>
+</tr>
+
+<tr>
+<td>水曜日</td>
+<td>10:00〜19:00</td>
+</tr>
+
+<tr>
+<td>木曜日</td>
+<td>10:00〜19:00</td>
+</tr>
+
+<tr>
+<td>金曜日</td>
+<td>10:00〜20:00</td>
+</tr>
+
+<tr>
+<td>土曜日</td>
+<td>9:00〜19:00</td>
+</tr>
+
+<tr>
+<td>日曜日・祝日</td>
+<td>9:00〜18:00</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>人気メニュー</h2>
+
+<div class="menu-grid">
+
+<div class="menu">
+
+<h3>カット</h3>
+
+<p>骨格や髪質に合わせた似合わせカット</p>
+
+<div class="price">¥4,950</div>
+
+</div>
+
+<div class="menu">
+
+<h3>カラー</h3>
+
+<p>透明感とツヤ感を引き出すカラー</p>
+
+<div class="price">¥7,700〜</div>
+
+</div>
+
+<div class="menu">
+
+<h3>トリートメント</h3>
+
+<p>髪質に合わせた集中ヘアケア</p>
+
+<div class="price">¥3,850〜</div>
+
+</div>
+
+</div>
+
+</section>
+
+<a class="button" href="https://ここにGoogleフォームURL">
+
+📅 ご予約はこちら
+
+</a>
+
+</div>
+
+<footer>
+
+© 2026 Ciel Beauty
+
+</footer>
+
+</body>
+</html>
