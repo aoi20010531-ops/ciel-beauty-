@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f5f1ef">
+<meta name="description" content="Ciel Beauty — 渋谷のプライベートヘアサロン。メニュー、営業時間、アクセス、ご予約はこちら。">
+<title>Ciel Beauty | 渋谷ヘアサロン</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --ink:#474144;
+    --muted:#81787d;
+    --cream:#f8f6f4;
+    --paper:rgba(255,255,255,.80);
+    --paper-solid:#fcfbfa;
+    --line:rgba(91,80,86,.14);
+    --mauve:#b8a9b2;
+    --pearl-a:#eee8f2;
+    --pearl-b:#e8f1ed;
+    --pearl-c:#f4e8e4;
+    --shadow:0 24px 70px rgba(73,60,67,.10);
+    --radius:30px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Noto Sans JP',sans-serif;
+    color:var(--ink);
+    line-height:1.9;
+    background:
+        radial-gradient(circle at 10% 5%,rgba(231,240,236,.85),transparent 28rem),
+        radial-gradient(circle at 92% 24%,rgba(241,231,237,.75),transparent 30rem),
+        radial-gradient(circle at 40% 85%,rgba(247,232,227,.65),transparent 28rem),
+        var(--cream);
+    overflow-x:hidden;
+}
+
+body::before,
+body::after{
+    content:"";
+    position:fixed;
+    width:24rem;
+    height:24rem;
+    border:1px solid rgba(111,98,104,.07);
+    border-radius:46% 54% 62% 38%;
+    pointer-events:none;
+    z-index:-1;
+}
+
+body::before{
+    top:18%;
+    left:-15rem;
+    transform:rotate(32deg);
+}
+
+body::after{
+    right:-16rem;
+    bottom:4%;
+    transform:rotate(-28deg);
+}
+
+a{
+    color:inherit;
+}
+
+.site-header{
+    position:absolute;
+    inset:0 0 auto;
+    z-index:10;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:28px;
+    padding:24px clamp(24px,6vw,80px);
+    color:#fff;
+}
+
+.wordmark{
+    flex:none;
+    font-family:'Cormorant Garamond',serif;
+    font-size:29px;
+    letter-spacing:.12em;
+    text-decoration:none;
+    text-shadow:0 2px 18px rgba(0,0,0,.25);
+}
+
+.nav{
+    display:flex;
+    align-items:center;
+    gap:26px;
+    font-size:11px;
+    letter-spacing:.16em;
+}
+
+.nav a{
+    text-decoration:none;
+    opacity:.88;
+    transition:opacity .25s ease,transform .25s ease;
+}
+
+.nav a:hover{
+    opacity:1;
+    transform:translateY(-1px);
+}
+
+.nav .nav-booking{
+    padding:9px 16px;
+    border:1px solid rgba(255,255,255,.58);
+    border-radius:999px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+}
+
+.hero{
+    min-height:82vh;
+    padding:120px 24px 90px;
+    background:
+        linear-gradient(180deg,rgba(28,24,26,.28),rgba(32,27,30,.50)),
+        url("hero.jpg") center/cover no-repeat,
+        linear-gradient(135deg,#aeb7b2,#b8a8b0 54%,#d3bdb5);
+    display:grid;
+    place-items:center;
+    text-align:center;
+    color:#fff;
+    position:relative;
+    isolation:isolate;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:auto 0 0;
+    height:155px;
+    background:linear-gradient(transparent,var(--cream));
+    z-index:-1;
+}
+
+.hero-content{
+    max-width:760px;
+}
+
+.hero-kicker{
+    font-family:'Cormorant Garamond',serif;
+    font-size:15px;
+    letter-spacing:.34em;
+    text-transform:uppercase;
+    opacity:.9;
+}
+
+.hero h1{
+    margin-top:14px;
+    font-family:'Cormorant Garamond','Noto Serif JP',serif;
+    font-size:clamp(66px,11vw,122px);
+    font-weight:500;
+    line-height:.85;
+    letter-spacing:.045em;
+    text-shadow:0 8px 30px rgba(0,0,0,.22);
+}
+
+.hero p{
+    margin-top:34px;
+    font-family:'Noto Serif JP',serif;
+    font-size:clamp(16px,2vw,21px);
+    letter-spacing:.18em;
+    text-shadow:0 3px 18px rgba(0,0,0,.28);
+}
+
+.hero-scroll{
+    position:absolute;
+    bottom:34px;
+    left:50%;
+    transform:translateX(-50%);
+    font-family:'Cormorant Garamond',serif;
+    font-size:12px;
+    letter-spacing:.24em;
+    opacity:.82;
+}
+
+.hero-scroll::after{
+    content:"";
+    display:block;
+    width:1px;
+    height:34px;
+    margin:10px auto 0;
+    background:rgba(255,255,255,.72);
+}
+
+.container{
+    width:min(1120px,calc(100% - 36px));
+    margin:auto;
+    padding:95px 0 76px;
+}
+
+section{
+    margin-bottom:104px;
+    scroll-margin-top:30px;
+}
+
+.section-heading{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 40px;
+}
+
+.eyebrow{
+    display:block;
+    font-family:'Cormorant Garamond',serif;
+    color:var(--mauve);
+    font-size:15px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    margin-bottom:8px;
+}
+
+h2{
+    font-family:'Noto Serif JP',serif;
+    font-weight:500;
+    font-size:clamp(27px,4vw,38px);
+    letter-spacing:.09em;
+}
+
+.section-intro{
+    margin-top:14px;
+    color:var(--muted);
+    font-size:14px;
+}
+
+.section-heading::after{
+    content:"";
+    display:block;
+    width:56px;
+    height:1px;
+    margin:18px auto 0;
+    background:linear-gradient(90deg,transparent,var(--mauve),transparent);
+}
+
+.glass-card{
+    position:relative;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.82);
+    border-radius:var(--radius);
+    background:var(--paper);
+    box-shadow:var(--shadow);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+}
+
+.glass-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:
+        linear-gradient(125deg,rgba(255,255,255,.62),transparent 34%),
+        radial-gradient(circle at 92% 5%,rgba(231,238,246,.48),transparent 32%);
+}
+
+.hours-card{
+    max-width:780px;
+    margin:auto;
+    padding:36px clamp(24px,6vw,58px);
+}
+
+.hours-card table{
+    width:100%;
+    border-collapse:collapse;
+    position:relative;
+}
+
+.hours-card td{
+    padding:15px 2px;
+    border-bottom:1px solid var(--line);
+    font-size:15px;
+}
+
+.hours-card tr:last-child td{
+    border-bottom:none;
+}
+
+.hours-card td:last-child{
+    text-align:right;
+    color:var(--muted);
+    letter-spacing:.04em;
+}
+
+.closed{
+    color:#a68f9b !important;
+}
+
+.menu-layout{
+    display:grid;
+    grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);
+    gap:24px;
+    align-items:start;
+}
+
+.menu-panel{
+    padding:32px clamp(22px,4vw,42px) 34px;
+}
+
+.menu-panel-header{
+    position:relative;
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:20px;
+    padding-bottom:20px;
+    border-bottom:1px solid var(--line);
+}
+
+.menu-panel-header h3{
+    font-family:'Noto Serif JP',serif;
+    font-size:23px;
+    font-weight:500;
+    letter-spacing:.07em;
+}
+
+.menu-panel-header span{
+    color:var(--muted);
+    font-family:'Cormorant Garamond',serif;
+    font-size:13px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+}
+
+.menu-list{
+    position:relative;
+    list-style:none;
+}
+
+.menu-item{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:20px;
+    align-items:center;
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+}
+
+.menu-item:last-child{
+    border-bottom:none;
+    padding-bottom:4px;
+}
+
+.menu-item h4{
+    font-family:'Noto Serif JP',serif;
+    font-size:17px;
+    font-weight:500;
+    letter-spacing:.04em;
+}
+
+.menu-item p{
+    margin-top:4px;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.7;
+}
+
+.menu-price{
+    white-space:nowrap;
+    font-family:'Cormorant Garamond','Noto Serif JP',serif;
+    font-size:25px;
+    line-height:1;
+    letter-spacing:.04em;
+    background:linear-gradient(100deg,#8f7f89 10%,#9eaaa0 48%,#a08d98 88%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.menu-footnote{
+    margin-top:22px;
+    color:#968c91;
+    font-size:11px;
+    line-height:1.8;
+}
+
+.access-card{
+    display:grid;
+    grid-template-columns:minmax(310px,.72fr) minmax(0,1.28fr);
+    min-height:430px;
+}
+
+.access-copy{
+    position:relative;
+    z-index:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:48px clamp(26px,5vw,58px);
+}
+
+.access-copy h3{
+    font-family:'Noto Serif JP',serif;
+    font-size:24px;
+    font-weight:500;
+    letter-spacing:.06em;
+}
+
+.access-label{
+    display:block;
+    margin-top:24px;
+    color:var(--mauve);
+    font-family:'Cormorant Garamond',serif;
+    font-size:12px;
+    letter-spacing:.20em;
+    text-transform:uppercase;
+}
+
+.access-copy p{
+    margin-top:5px;
+    color:var(--muted);
+    font-size:14px;
+}
+
+.demo-note{
+    margin-top:16px !important;
+    padding:11px 14px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:rgba(255,255,255,.46);
+    font-size:11px !important;
+}
+
+.map-link{
+    align-self:flex-start;
+    margin-top:26px;
+    text-decoration:none;
+    font-size:13px;
+    letter-spacing:.08em;
+    border-bottom:1px solid rgba(71,65,68,.35);
+    transition:border-color .25s ease,color .25s ease;
+}
+
+.map-link:hover{
+    color:#786a72;
+    border-color:#786a72;
+}
+
+.map-wrap{
+    position:relative;
+    min-height:430px;
+    background:#ece8e8;
+}
+
+.map-wrap iframe{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    border:0;
+    filter:saturate(.72) contrast(.94);
+}
+
+.booking-panel{
+    padding:58px clamp(24px,7vw,74px);
+    text-align:center;
+}
+
+.booking-panel h2{
+    margin-bottom:15px;
+}
+
+.booking-panel p{
+    color:var(--muted);
+    max-width:650px;
+    margin:0 auto;
+    font-size:14px;
+}
+
+.button{
+    position:relative;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    min-width:min(100%,360px);
+    margin-top:34px;
+    padding:17px 34px;
+    border-radius:999px;
+    overflow:hidden;
+    text-decoration:none;
+    color:#554d51;
+    font-size:15px;
+    letter-spacing:.12em;
+    border:1px solid rgba(255,255,255,.85);
+    background:linear-gradient(115deg,rgba(238,232,244,.95),rgba(232,242,237,.95) 45%,rgba(246,232,229,.95));
+    box-shadow:0 12px 34px rgba(92,76,85,.13),inset 0 1px 0 rgba(255,255,255,.9);
+    transition:transform .3s ease,box-shadow .3s ease;
+}
+
+.button::after{
+    content:"";
+    position:absolute;
+    top:-100%;
+    left:-30%;
+    width:28%;
+    height:300%;
+    transform:rotate(20deg);
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.75),transparent);
+    transition:left .65s ease;
+}
+
+.button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 18px 38px rgba(92,76,85,.18),inset 0 1px 0 rgba(255,255,255,.95);
+}
+
+.button:hover::after{
+    left:115%;
+}
+
+.booking-caption{
+    margin-top:14px !important;
+    font-size:11px !important;
+    letter-spacing:.08em;
+}
+
+footer{
+    padding:34px 24px 42px;
+    text-align:center;
+    color:#91878c;
+    font-family:'Cormorant Garamond',serif;
+    letter-spacing:.12em;
+    font-size:14px;
+}
+
+.footer-sub{
+    display:block;
+    margin-top:4px;
+    font-family:'Noto Sans JP',sans-serif;
+    font-size:10px;
+    letter-spacing:.08em;
+}
+
+@media(max-width:900px){
+    .menu-layout,
+    .access-card{
+        grid-template-columns:1fr;
+    }
+
+    .map-wrap{
+        min-height:380px;
+    }
+}
+
+@media(max-width:680px){
+    .site-header{
+        padding:20px 22px;
+    }
+
+    .nav a:not(.nav-booking){
+        display:none;
+    }
+
+    .nav{
+        gap:0;
+    }
+
+    .hero{
+        min-height:74vh;
+    }
+
+    .container{
+        padding-top:72px;
+    }
+
+    section{
+        margin-bottom:78px;
+    }
+
+    .hours-card{
+        padding:28px 22px;
+    }
+
+    .hours-card td{
+        font-size:13px;
+    }
+
+    .menu-panel{
+        padding:28px 22px 30px;
+    }
+
+    .menu-panel-header{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:4px;
+    }
+
+    .menu-item{
+        gap:12px;
+    }
+
+    .menu-item h4{
+        font-size:15px;
+    }
+
+    .menu-price{
+        font-size:22px;
+    }
+
+    .access-copy{
+        padding:40px 24px;
+    }
+
+    .map-wrap{
+        min-height:330px;
+    }
+
+    .booking-panel{
+        padding:46px 22px;
+    }
+}
+
+@media(max-width:420px){
+    .wordmark{
+        font-size:25px;
+    }
+
+    .nav-booking{
+        padding:8px 13px !important;
+        font-size:10px;
+    }
+
+    .menu-item{
+        grid-template-columns:1fr;
+        gap:10px;
+    }
+
+    .menu-price{
+        justify-self:start;
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+    html{
+        scroll-behavior:auto;
+    }
+
+    .nav a,
+    .button,
+    .button::after,
+    .map-link{
+        transition:none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Ciel Beauty トップへ">Ciel Beauty</a>
+    <nav class="nav" aria-label="メインナビゲーション">
+        <a href="#hours">HOURS</a>
+        <a href="#menu">MENU</a>
+        <a href="#access">ACCESS</a>
+        <a class="nav-booking" href="#booking">BOOKING</a>
+    </nav>
+</header>
+
+<section class="hero" id="top">
+    <div class="hero-content">
+        <div class="hero-kicker">Hair salon · Ciel Beauty</div>
+        <h1>Ciel</h1>
+        <p>髪も、心も整う場所。</p>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">SCROLL</div>
+</section>
+
+<main class="container">
+
+    <section id="hours">
+        <div class="section-heading">
+            <span class="eyebrow">Opening hours</span>
+            <h2>営業時間</h2>
+        </div>
+
+        <div class="glass-card hours-card">
+            <table aria-label="Ciel Beauty 営業時間">
+                <tbody>
+                    <tr><td>月曜日</td><td>10:00〜19:00</td></tr>
+                    <tr><td>火曜日</td><td class="closed">定休日</td></tr>
+                    <tr><td>水曜日</td><td>10:00〜19:00</td></tr>
+                    <tr><td>木曜日</td><td>10:00〜19:00</td></tr>
+                    <tr><td>金曜日</td><td>10:00〜20:00</td></tr>
+                    <tr><td>土曜日</td><td>9:00〜19:00</td></tr>
+                    <tr><td>日曜日・祝日</td><td>9:00〜18:00</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="menu">
+        <div class="section-heading">
+            <span class="eyebrow">Salon menu</span>
+            <h2>メニュー</h2>
+            <p class="section-intro">髪質やなりたいスタイルに合わせて、最適な施術をご提案します。</p>
+        </div>
+
+        <div class="menu-layout">
+            <article class="glass-card menu-panel">
+                <div class="menu-panel-header">
+                    <h3>基本メニュー</h3>
+                    <span>Cut · Color · Perm</span>
+                </div>
+
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <div>
+                            <h4>カット</h4>
+                            <p>骨格・髪質・ライフスタイルに合わせたデザイン。</p>
+                        </div>
+                        <div class="menu-price">¥4,400</div>
+                    </li>
+                    <li class="menu-item">
+                        <div>
+                            <h4>フルカラー</h4>
+                            <p>透明感のあるカラーから、自然なツヤ感まで。</p>
+                        </div>
+                        <div class="menu-price">¥7,700</div>
+                    </li>
+                    <li class="menu-item">
+                        <div>
+                            <h4>パーマ</h4>
+                            <p>やわらかな動きと扱いやすさをプラス。</p>
+                        </div>
+                        <div class="menu-price">¥8,800〜</div>
+                    </li>
+                    <li class="menu-item">
+                        <div>
+                            <h4>デジタルパーマ</h4>
+                            <p>乾かすだけでまとまりやすい、弾力のあるカール。</p>
+                        </div>
+                        <div class="menu-price">¥13,200〜</div>
+                    </li>
+                    <li class="menu-item">
+                        <div>
+                            <h4>ストレートパーマ</h4>
+                            <p>自然なボリュームダウンと、やわらかな質感へ。</p>
+                        </div>
+                        <div class="menu-price">¥9,900〜</div>
+                    </li>
+                    <li class="menu-item">
+                        <div>
+                            <h4>縮毛矯正</h4>
+                            <p>強いくせやうねりを整え、自然なストレートへ。</p>
+                        </div>
+                        <div class="menu-price">¥15,400〜</div>
+                    </li>
+                </ul>
+            </article>
+
+            <article class="glass-card menu-panel">
+                <div class="menu-panel-header">
+                    <h3>追加オプション</h3>
+                    <span>Care options</span>
+                </div>
+
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <div>
+                            <h4>炭酸頭浸浴</h4>
+                            <p>炭酸のお湯で頭皮と髪をやさしく包み込みます。</p>
+                        </div>
+                        <div class="menu-price">＋¥1,650</div>
+                    </li>
+                    <li class="menu-item">
+                        <div>
+                            <h4>炭酸泉クレンジング</h4>
+                            <p>皮脂やスタイリング剤をすっきり洗浄。</p>
+                        </div>
+                        <div class="menu-price">＋¥1,100</div>
+                    </li>
+                    <li class="menu-item">
+                        <div>
+                            <h4>ケアカラー</h4>
+                            <p>カラー施術時のダメージに配慮した追加ケア。</p>
+                        </div>
+                        <div class="menu-price">＋¥2,200</div>
+                    </li>
+                    <li class="menu-item">
+                        <div>
+                            <h4>ミネラルリセット</h4>
+                            <p>髪に残ったミネラルや蓄積汚れをリセット。</p>
+                        </div>
+                        <div class="menu-price">＋¥1,650</div>
+                    </li>
+                </ul>
+
+                <p class="menu-footnote">※ 表示価格は税込です。髪の長さ・状態・施術内容により料金が変わる場合があります。</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="access">
+        <div class="section-heading">
+            <span class="eyebrow">Access</span>
+            <h2>アクセス</h2>
+            <p class="section-intro">渋谷駅から徒歩すぐ。ご来店前に地図をご確認ください。</p>
+        </div>
+
+        <div class="glass-card access-card">
+            <div class="access-copy">
+                <span class="eyebrow">Ciel Beauty Shibuya</span>
+                <h3>渋谷スクランブル交差点付近</h3>
+
+                <span class="access-label">Nearest station</span>
+                <p>各線「渋谷駅」ハチ公口より徒歩約1分</p>
+
+                <span class="access-label">Address</span>
+                <p>東京都渋谷区・渋谷スクランブル交差点周辺</p>
+
+                <p class="demo-note">※ Ciel Beautyは制作課題用のデモサロンです。掲載位置はデモ用です。</p>
+
+                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shibuya+Scramble+Crossing" target="_blank" rel="noopener noreferrer">Google Mapsで開く ↗</a>
+            </div>
+
+            <div class="map-wrap">
+                <iframe
+                    title="渋谷スクランブル交差点のGoogleマップ"
+                    src="https://www.google.com/maps?q=Shibuya+Scramble+Crossing&output=embed"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking">
+        <div class="glass-card booking-panel">
+            <span class="eyebrow">Reservation</span>
+            <h2>ご予約</h2>
+            <p>落ち着いた空間で、あなたらしい髪へ。ご希望の日時・メニュー・担当者を予約フォームよりお知らせください。</p>
+            <a class="button" href="https://ここにGoogleフォームURL" target="_blank" rel="noopener noreferrer">ご予約はこちら</a>
+            <p class="booking-caption">外部予約フォームへ移動します</p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    © 2026 Ciel Beauty
+    <span class="footer-sub">DEMO SALON PROJECT</span>
+</footer>
+
+</body>
+</html>
